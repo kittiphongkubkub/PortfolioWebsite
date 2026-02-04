@@ -167,14 +167,7 @@ This project is free to use for personal and commercial purposes.
 4. **SEO**: Update meta tags in `<head>` for better search engine visibility
 5. **Analytics**: Add Google Analytics or similar for tracking
 
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio!
-
 ## 📧 Contact
 
-For questions or suggestions, feel free to reach out through the contact form on the website.
+© Kittiphong Toadonthong
 
----
-
-**Built with ❤️ using HTML, CSS, and GSAP**

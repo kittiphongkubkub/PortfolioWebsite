@@ -570,9 +570,9 @@ ScrollTrigger.create({
     start: 'top 80%',
     onEnter: () => {
         const stats = document.querySelectorAll('.stat h4');
-        animateCounter(stats[0], 50);
-        animateCounter(stats[1], 5);
-        animateCounter(stats[2], 30);
+        animateCounter(stats[0], 10);
+        animateCounter(stats[1], 3);
+        animateCounter(stats[2], 10);
     },
     once: true
 });
