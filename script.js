@@ -114,53 +114,27 @@ heroTimeline
 // GSAP SCROLL ANIMATIONS - SECTIONS
 // ===================================
 
-// About Section
+// About Section - Simplified animations
 gsap.from('.about-text h3', {
     scrollTrigger: {
         trigger: '.about-text',
         start: 'top 80%',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'play none none none'
     },
     opacity: 0,
-    x: -50,
-    duration: 1
-});
-
-gsap.from('.about-text p', {
-    scrollTrigger: {
-        trigger: '.about-text',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    x: -30,
-    duration: 1,
-    stagger: 0.2
-});
-
-gsap.from('.stat', {
-    scrollTrigger: {
-        trigger: '.about-stats',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    y: 50,
-    duration: 0.8,
-    stagger: 0.2
+    y: 30,
+    duration: 0.8
 });
 
 gsap.from('.image-card', {
     scrollTrigger: {
         trigger: '.about-image',
         start: 'top 80%',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'play none none none'
     },
     opacity: 0,
-    scale: 0.8,
-    rotation: -10,
-    duration: 1.2,
-    ease: 'back.out(1.7)'
+    scale: 0.9,
+    duration: 0.8
 });
 
 // Projects Section
@@ -201,142 +175,45 @@ gsap.from('.projects .section-subtitle', {
 //     ease: 'power2.out'
 // });
 
-// Skills Section
+// Skills Section - Simplified
 gsap.from('.skills .section-title', {
     scrollTrigger: {
         trigger: '.skills',
         start: 'top 80%',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'play none none none'
     },
     opacity: 0,
     y: 30,
-    duration: 1
+    duration: 0.8
 });
 
-gsap.from('.skills .section-subtitle', {
-    scrollTrigger: {
-        trigger: '.skills',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    y: 20,
-    duration: 1,
-    delay: 0.2
-});
-
-const skillCategories = document.querySelectorAll('.skill-category');
-skillCategories.forEach((category, index) => {
-    gsap.from(category.querySelector('h3'), {
-        scrollTrigger: {
-            trigger: category,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        },
-        opacity: 0,
-        x: -30,
-        duration: 0.8
-    });
-
-    gsap.from(category.querySelectorAll('.skill-card'), {
-        scrollTrigger: {
-            trigger: category,
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        },
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'back.out(1.7)'
-    });
-});
-
-// Contact Section
+// Contact Section - Simplified
 gsap.from('.contact .section-title', {
     scrollTrigger: {
         trigger: '.contact',
         start: 'top 80%',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'play none none none'
     },
     opacity: 0,
     y: 30,
-    duration: 1
-});
-
-gsap.from('.contact .section-subtitle', {
-    scrollTrigger: {
-        trigger: '.contact',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    y: 20,
-    duration: 1,
-    delay: 0.2
+    duration: 0.8
 });
 
 gsap.from('.contact-info', {
     scrollTrigger: {
         trigger: '.contact-content',
         start: 'top 80%',
-        toggleActions: 'play none none reverse'
+        toggleActions: 'play none none none'
     },
     opacity: 0,
-    x: -50,
-    duration: 1
-});
-
-gsap.from('.contact-item', {
-    scrollTrigger: {
-        trigger: '.contact-details',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    x: -30,
-    duration: 0.6,
-    stagger: 0.15
-});
-
-gsap.from('.contact-form-wrapper', {
-    scrollTrigger: {
-        trigger: '.contact-content',
-        start: 'top 80%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    x: 50,
-    duration: 1
-});
-
-gsap.from('.form-group', {
-    scrollTrigger: {
-        trigger: '.contact-form',
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    y: 20,
-    duration: 0.6,
-    stagger: 0.1
+    y: 30,
+    duration: 0.8
 });
 
 // ===================================
-// PARALLAX EFFECT - VIDEO BACKGROUND
+// PARALLAX EFFECT - REMOVED FOR PERFORMANCE
 // ===================================
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const videoBackground = document.querySelector('.video-background');
-
-    if (hero && videoBackground) {
-        const heroHeight = hero.offsetHeight;
-        if (scrolled <= heroHeight) {
-            videoBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
-    }
-});
+// Parallax effect removed to improve scroll performance
 
 // ===================================
 // CONTACT FORM HANDLING WITH EMAILJS
@@ -446,76 +323,10 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 // ===================================
-// CURSOR EFFECT (Optional Enhancement)
+// CURSOR EFFECT - REMOVED FOR PERFORMANCE
 // ===================================
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
-document.body.appendChild(cursor);
-
-let cursorX = 0;
-let cursorY = 0;
-let currentX = 0;
-let currentY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    cursorX = e.clientX;
-    cursorY = e.clientY;
-});
-
-function animateCursor() {
-    const distX = cursorX - currentX;
-    const distY = cursorY - currentY;
-
-    currentX += distX * 0.1;
-    currentY += distY * 0.1;
-
-    cursor.style.left = currentX + 'px';
-    cursor.style.top = currentY + 'px';
-
-    requestAnimationFrame(animateCursor);
-}
-
-animateCursor();
-
-// Add cursor styles
-const cursorStyle = document.createElement('style');
-cursorStyle.textContent = `
-    .custom-cursor {
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #667eea;
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.2s ease;
-        transform: translate(-50%, -50%);
-    }
-    
-    @media (max-width: 768px) {
-        .custom-cursor {
-            display: none;
-        }
-    }
-`;
-document.head.appendChild(cursorStyle);
-
-// ===================================
-// INTERACTIVE HOVER EFFECTS
-// ===================================
-const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-card');
-
-interactiveElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursor.style.borderColor = '#f5576c';
-    });
-
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursor.style.borderColor = '#667eea';
-    });
-});
+// Custom cursor effect removed to improve performance
+// It was using continuous requestAnimationFrame which consumed resources
 
 // ===================================
 // LOADING ANIMATION
