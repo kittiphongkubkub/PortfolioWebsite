@@ -175,7 +175,7 @@ gsap.from('.projects .section-subtitle', {
 //     ease: 'power2.out'
 // });
 
-// Skills Section - Simplified
+// Skills Section - Full animations
 gsap.from('.skills .section-title', {
     scrollTrigger: {
         trigger: '.skills',
@@ -187,7 +187,88 @@ gsap.from('.skills .section-title', {
     duration: 0.8
 });
 
-// Contact Section - Simplified
+gsap.from('.skills .section-subtitle', {
+    scrollTrigger: {
+        trigger: '.skills',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    delay: 0.2
+});
+
+// Skill cards animation - DISABLED to fix display issues
+// gsap.from('.skill-card', {
+//     scrollTrigger: {
+//         trigger: '.skills-grid',
+//         start: 'top 80%',
+//         toggleActions: 'play none none none'
+//     },
+//     opacity: 0,
+//     y: 50,
+//     scale: 0.9,
+//     duration: 0.6,
+//     stagger: 0.1,
+//     ease: 'back.out(1.4)'
+// });
+
+// About Section - Stats Animation - DISABLED
+// gsap.from('.stat', {
+//     scrollTrigger: {
+//         trigger: '.about-stats',
+//         start: 'top 80%',
+//         toggleActions: 'play none none none'
+//     },
+//     opacity: 0,
+//     y: 30,
+//     scale: 0.9,
+//     duration: 0.6,
+//     stagger: 0.15,
+//     ease: 'power2.out'
+// });
+
+// Certificates Section - Full animations
+gsap.from('.certificates .section-title', {
+    scrollTrigger: {
+        trigger: '.certificates',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8
+});
+
+gsap.from('.certificates .section-subtitle', {
+    scrollTrigger: {
+        trigger: '.certificates',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    delay: 0.2
+});
+
+// Certificate cards animation - DISABLED to fix display issues
+// gsap.from('.certificate-card', {
+//     scrollTrigger: {
+//         trigger: '.certificates-grid',
+//         start: 'top 80%',
+//         toggleActions: 'play none none none'
+//     },
+//     opacity: 0,
+//     y: 50,
+//     scale: 0.95,
+//     duration: 0.7,
+//     stagger: 0.15,
+//     ease: 'power2.out'
+// });
+
+// Contact Section - Enhanced animations
 gsap.from('.contact .section-title', {
     scrollTrigger: {
         trigger: '.contact',
@@ -199,6 +280,18 @@ gsap.from('.contact .section-title', {
     duration: 0.8
 });
 
+gsap.from('.contact .section-subtitle', {
+    scrollTrigger: {
+        trigger: '.contact',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    delay: 0.2
+});
+
 gsap.from('.contact-info', {
     scrollTrigger: {
         trigger: '.contact-content',
@@ -208,6 +301,76 @@ gsap.from('.contact-info', {
     opacity: 0,
     y: 30,
     duration: 0.8
+});
+
+gsap.from('.contact-item', {
+    scrollTrigger: {
+        trigger: '.contact-info',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    x: -30,
+    duration: 0.6,
+    stagger: 0.15,
+    ease: 'power2.out'
+});
+
+gsap.from('.contact-social a', {
+    scrollTrigger: {
+        trigger: '.contact-social',
+        start: 'top 90%',
+        toggleActions: 'play none none none'
+    },
+    opacity: 0,
+    scale: 0,
+    duration: 0.5,
+    stagger: 0.1,
+    ease: 'back.out(2)'
+});
+
+// ===================================
+// INTERACTIVE CURSOR EFFECTS
+// ===================================
+
+// Add magnetic effect to buttons
+const buttons = document.querySelectorAll('.btn, .cert-btn');
+buttons.forEach(button => {
+    button.addEventListener('mouseenter', function () {
+        gsap.to(this, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
+
+    button.addEventListener('mouseleave', function () {
+        gsap.to(this, {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
+});
+
+// Add hover effect to cards
+const cards = document.querySelectorAll('.project-card, .skill-card, .certificate-card, .stat');
+cards.forEach(card => {
+    card.addEventListener('mouseenter', function () {
+        gsap.to(this, {
+            y: -10,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
+
+    card.addEventListener('mouseleave', function () {
+        gsap.to(this, {
+            y: 0,
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
 });
 
 // ===================================
